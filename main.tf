@@ -1,9 +1,18 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0.0"
+    }
+  }
+}
+
 provider "aws" {
   region = var.region
 }
 
-module "s3-webapp" {
-  source  = "app.terraform.io/hashicorp-learn/s3-webapp/aws"
+module "terraform-aws-s3-webapp-lugm" {
+  source  = "app.terraform.io/terraform-learn-lugm/terraform-aws-s3-webapp-lugm/myprovider"
   name    = var.name
   region  = var.region
   prefix  = var.prefix
